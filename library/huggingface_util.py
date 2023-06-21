@@ -3,7 +3,8 @@ from huggingface_hub import HfApi
 from pathlib import Path
 import argparse
 import os
-from typing import BinaryIO
+# from typing import BinaryIO
+from io import BytesIO
 
 from library.utils import fire_in_thread
 
@@ -23,7 +24,7 @@ def exists_repo(
 
 def upload(
     args: argparse.Namespace,
-    src: Union[str, Path, bytes, BinaryIO],
+    src: Union[str, Path, bytes, BytesIO],
     dest_suffix: str = "",
     force_sync_upload: bool = False,
 ):
