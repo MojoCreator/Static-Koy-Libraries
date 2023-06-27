@@ -641,7 +641,7 @@ def train(args):
 
         accelerator.wait_for_everyone()
 
-        if args.save_every_n_epochs is not None:
+        if args.save_every_n_epochs is not None and args.save_every_n_epochs != 0:
             model_name = train_util.DEFAULT_EPOCH_NAME if args.output_name is None else args.output_name
 
             def save_func():
